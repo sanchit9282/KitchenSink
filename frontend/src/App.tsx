@@ -1,17 +1,17 @@
 import React from 'react';
-import './utils/axiosConfig.ts';
+import './utils/axiosConfig';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext.tsx';
-import Login from './components/auth/Login.tsx';
-import Register from './components/auth/Register.tsx';
-import MemberList from './components/MemberList.tsx';
-import ProtectedRoute from './components/auth/ProtectedRoute.tsx';
-import Header from './components/layout/Header.tsx';
-import Unauthorized from './components/auth/Unauthorized.tsx';
+import { AuthProvider } from './context/AuthContext';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import MemberList from './components/MemberList';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import Header from './components/layout/Header';
+import Unauthorized from './components/auth/Unauthorized';
 import { Container, Typography } from '@mui/material';
-import { ToastProvider } from './context/ToastContext.tsx';
-import SessionDialog from './components/auth/SessionDialog.tsx';
-import { useSessionManager } from './hooks/useSessionManager.ts';
+import { ToastProvider } from './context/ToastContext';
+import SessionDialog from './components/auth/SessionDialog';
+import { useSessionManager } from './hooks/useSessionManager';
 
 // Create a wrapper component that uses session management
 const SessionManagement: React.FC<{ children: React.ReactNode }> = ({ children }) => {

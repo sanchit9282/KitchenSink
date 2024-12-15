@@ -12,7 +12,7 @@ import {
   Divider
 } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import { useAuth } from '../../context/AuthContext.tsx';
+import { useAuth } from '../../context/AuthContext';
 
 const Header: React.FC = () => {
   const { isAuthenticated, user, logout } = useAuth();

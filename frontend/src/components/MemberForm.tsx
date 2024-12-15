@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Box, Grid } from '@mui/material';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import { useToast } from '../context/ToastContext.tsx';
+import { useToast } from '../context/ToastContext';
 import axios from 'axios';
 
 interface MemberFormProps {

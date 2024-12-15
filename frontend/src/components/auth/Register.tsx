@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, TextField, Button, Typography, Paper } from '@mui/material';
-import { register } from '../../services/auth.service.ts';
-import { useToast } from '../../context/ToastContext.tsx';
+import { register } from '../../services/auth.service';
+import { useToast } from '../../context/ToastContext';
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState('');

@@ -22,10 +22,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import { Member } from '../types/Member';
-import { useAuth } from '../context/AuthContext.tsx';
+import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
-import MemberForm from './MemberForm.tsx';
-import { useToast } from '../context/ToastContext.tsx';
+import MemberForm from './MemberForm';
+import { useToast } from '../context/ToastContext';
 
 interface PaginatedResponse<T> {
   success: boolean;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, TextField, Button, Typography, Paper } from '@mui/material';
-import { login } from '../../services/auth.service.ts';
-import { useAuth } from '../../context/AuthContext.tsx';
-import { useToast } from '../../context/ToastContext.tsx';
+import { login } from '../../services/auth.service';
+import { useAuth } from '../../context/AuthContext';
+import { useToast } from '../../context/ToastContext';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');

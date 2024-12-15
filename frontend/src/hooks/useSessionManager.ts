@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useAuth } from '../context/AuthContext.tsx';
-import { useToast } from '../context/ToastContext.tsx';
+import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import axios from 'axios';
 
 const TOKEN_REFRESH_THRESHOLD = 60000; // Show dialog 1 minute before expiration
