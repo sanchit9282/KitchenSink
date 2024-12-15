@@ -13,4 +13,9 @@ public class UpdateMemberRequest {
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "^\\+?[1-9][0-9]{7,14}$", message = "Please provide a valid phone number")
     private String phoneNumber;
+
+    public void setEmail(String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setEmail'");
+    }
 } 

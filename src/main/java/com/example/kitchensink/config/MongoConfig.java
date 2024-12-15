@@ -38,4 +38,3 @@ public class MongoConfig {
         indexOps.ensureIndex(emailIndex);
     }
 }
- 

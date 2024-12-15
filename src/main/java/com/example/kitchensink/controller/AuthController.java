@@ -30,10 +30,15 @@ import java.util.stream.Collectors;
 
 import jakarta.validation.Valid;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Authentication", description = "Authentication management APIs")
 public class AuthController {
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
@@ -52,6 +57,15 @@ public class AuthController {
     @Autowired
     RefreshTokenService refreshTokenService;
 
+    @Operation(
+        summary = "Login user", 
+        description = "Authenticates user and returns JWT token",
+        security = {}
+    )
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Successfully authenticated"),
+        @ApiResponse(responseCode = "401", description = "Invalid credentials")
+    })
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         logger.debug("Login attempt for user: {}", loginRequest.getUsername());
@@ -81,6 +95,10 @@ public class AuthController {
         }
     }
 
+    @Operation(
+        summary = "Register new user",
+        security = {}
+    )
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest registerRequest) {
         if (userRepository.existsByUsername(registerRequest.getUsername())) {
@@ -108,6 +126,10 @@ public class AuthController {
         return ResponseEntity.ok("User registered successfully!");
     }
 
+    @Operation(
+        summary = "Refresh token",
+        security = {}
+    )
     @PostMapping("/refresh-token")
     public ResponseEntity<?> refreshToken(@Valid @RequestBody TokenRefreshRequest request) {
         String requestRefreshToken = request.getRefreshToken();
@@ -124,6 +146,10 @@ public class AuthController {
             .orElseThrow(() -> new RuntimeException("Refresh token not found"));
     }
 
+    @Operation(
+        summary = "Logout user",
+        security = {}
+    )
     @PostMapping("/logout")
     public ResponseEntity<?> logoutUser(@Valid @RequestBody TokenRefreshRequest request) {
         try {

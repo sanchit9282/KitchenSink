@@ -8,6 +8,7 @@ import com.example.kitchensink.dto.response.PagedResponse;
 import com.example.kitchensink.mapper.MemberMapper;
 import com.example.kitchensink.model.Member;
 import com.example.kitchensink.repository.MemberRepository;
+import com.example.kitchensink.annotation.SwaggerResponse;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -26,10 +27,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Collectors;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/members")
-@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+@Tag(name = "Members", description = "Member management APIs")
+@SecurityRequirement(name = "bearer-jwt")
 public class MemberController {
     private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
@@ -95,6 +101,11 @@ public class MemberController {
         }
     }
 
+    @Operation(
+        summary = "Create new member",
+        description = "Creates a new member with the provided details"
+    )
+    @SwaggerResponse
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse<MemberDto>> createMember(@Valid @RequestBody CreateMemberRequest request) {

@@ -1,25 +1,36 @@
-version: '3'
+version: '3.8'
 services:
   mongodb:
     image: mongo:latest
+    container_name: mongodb
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=KitchenSink_DB
 
   backend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
     ports:
       - "8080:8080"
     depends_on:
       - mongodb
     environment:
       - SPRING_DATA_MONGODB_HOST=mongodb
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=KitchenSink_DB
 
   frontend:
-    build: ./frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    container_name: frontend
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
 
