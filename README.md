@@ -171,6 +171,12 @@ npm test
    docker-compose down
 ```
 
+### Launch Swagger UI
+
+```bash
+http://localhost:8080/swagger-ui.html
+```
+
 ## Project Structure
 
 ### Backend (`src`)
