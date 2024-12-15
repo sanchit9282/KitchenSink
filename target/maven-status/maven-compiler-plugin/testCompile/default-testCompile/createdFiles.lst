@@ -1,0 +1,3 @@
+com\example\kitchensink\controller\MemberControllerIntegrationTest.class
+com\example\kitchensink\service\MemberServiceTest.class
+com\example\kitchensink\service\TestSecurityConfig.class

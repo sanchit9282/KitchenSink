@@ -1,0 +1,8 @@
+com\example\kitchensink\KitchensinkApplication.class
+com\example\kitchensink\exception\GlobalExceptionHandler.class
+com\example\kitchensink\service\MemberService.class
+com\example\kitchensink\config\SecurityConfig.class
+com\example\kitchensink\config\RequestLoggingConfig.class
+com\example\kitchensink\model\Member.class
+com\example\kitchensink\controller\MemberController.class
+com\example\kitchensink\repository\MemberRepository.class
