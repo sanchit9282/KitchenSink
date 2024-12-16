@@ -28,6 +28,7 @@ public class MemberMapper {
 
     public void updateEntityFromDto(UpdateMemberRequest request, Member member) {
         member.setName(request.getName());
+        member.setEmail(request.getEmail());
         member.setPhoneNumber(request.getPhoneNumber());
     }
 } 

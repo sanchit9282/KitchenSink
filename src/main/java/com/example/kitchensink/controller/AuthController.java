@@ -117,7 +117,6 @@ public class AuthController {
 
         Set<Role> roles = new HashSet<>();
         roles.add(Role.ROLE_USER);
-        roles.add(Role.ROLE_ADMIN);
         user.setRoles(roles);
 
         userRepository.save(user);
