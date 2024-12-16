@@ -134,7 +134,7 @@ export default function MemberManagement() {
     <div style={{ minHeight: '100vh', padding: '2rem', backgroundColor: '#f5f5f5' }}>
       <Card sx={{ maxWidth: 1000, margin: '0 auto' }}>
         <CardHeader 
-          title="Kitchensink Members"
+          title="Members"
           subheader="Manage your member database with ease. Add new members and view existing ones."
         />
         <CardContent>

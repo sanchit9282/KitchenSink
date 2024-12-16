@@ -42,7 +42,7 @@ const Header: React.FC = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Kitchensink Members
+          Members
         </Typography>
         {isAuthenticated ? (
           <Box>
